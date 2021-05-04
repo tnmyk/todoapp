@@ -3,10 +3,10 @@ var muteUnmute = document.querySelector(".checkbox-container");
 var mute = localStorage.getItem("muteSetting");
 
 if (mute=='true') {
-  muteUnmute.textContent = "Unmute 🎶";
+  muteUnmute.textContent = "Muted 🔇";
   mute=true;
 } else if(mute=='false'){
-  muteUnmute.textContent = "Mute 🔇";
+  muteUnmute.textContent = "Sound on 🎶";
   mute=false;
 }
 
@@ -24,10 +24,10 @@ if (list.innerText == "") {
 }
 muteUnmute.addEventListener("click", function () {
   if (!mute) {
-    muteUnmute.textContent = "Unmute 🎶";
+    muteUnmute.textContent = "Muted 🔇";
     mute = true;
   } else {
-    muteUnmute.textContent = "Mute 🔇";
+    muteUnmute.textContent = "Sound on 🎶";
     mute = false;
   }
   localStorage.setItem("muteSetting", mute);

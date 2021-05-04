@@ -66,11 +66,12 @@ main {
 .todo-list-container h1 {
     text-align: center;
     border-bottom: 1px solid white;
+    letter-spacing: 2px;
 }
 .todo-list-container{
     color: white;
     background-color:black;
-    height:96%;
+    height:80vh;
     width: 70%;
     border-radius: 15px;
     border:1px solid white;
@@ -78,14 +79,17 @@ main {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 #ordered-list{
-    height:80%;
+    height:60vh;
     padding:1em 1em 1em 2em;
     font-size:1.4em;
+    font-weight:550;
     overflow-y:scroll;
     word-break: break-all;
+    
 }
 #ordered-list::-webkit-scrollbar{
   width:9px;
@@ -157,7 +161,8 @@ main {
 #clearall{
   color: white;
   float: right;
-  margin: 1.2em 1.4em;
+  margin: auto 5%;
+  margin-top:3vh;
   padding: 0.2em 0.6em;
   background-color: red;
   border:none;
@@ -219,11 +224,13 @@ main {
   margin-top: 6vh;
   padding: 0.3em 1em;
   font-size: 1.1em;
+  
   border: 1px solid gray;
-  border-radius: 5px;
+  border-radius: 7px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.5s;
+  background-color:#6C63FF;
 }
 
 #input-submit:hover {
@@ -249,7 +256,7 @@ main {
   display:inline-block;
   text-decoration: underline;
   margin-left: 1em;
-  background: linear-gradient(to right,rgb(0, 0, 0),rgb(175, 175, 175));-webkit-background-clip: text;
+  background: linear-gradient(to right,rgb(0, 0, 0),rgb(121, 121, 121));-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .myportfolio:hover div{
@@ -287,7 +294,7 @@ background-color:black;
   transform:scaleX(11);
 }
 .projects div{
-  background: linear-gradient(to right,rgb(0, 0, 0),rgb(175, 175, 175));-webkit-background-clip: text;
+  background: linear-gradient(to right,rgb(0, 0, 0),rgb(128, 128, 128));-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   vertical-align:middle;
   transition:1s;
@@ -309,6 +316,9 @@ background-color:black;
 @media all and (max-width:1200px){
   .todo-list-container{
     height: 65vh;
+  }
+  #ordered-list{
+    height:51vh;
   }
 }
 
@@ -332,6 +342,9 @@ background-color:black;
     width:80%;
     height:50vh;
   }
+  #ordered-list{
+    height:37vh;
+  }
   .checkbox-container{
     top: 10vh;
   }
@@ -350,6 +363,32 @@ background-color:black;
   }
   #input-submit{
     margin-top:3vh; 
+  }
+  .madeby{
+    font-size:9vw;
+  }
+  .myportfolio{
+    margin-top:20vh;
+    font-size:8vw;
+    width:70vw;
+  }
+  .projects{
+    font-size:5.5vw;
+    width:70vw;
+  }
+  .myportfolio:hover div{
+    transform: translateX(45%);
+  }
+  .myportfolio:hover h3{
+  transform:scaleX(6);
+    
+  }
+  .projects:hover h3{
+  transform:scaleX(6);
+    
+  }
+  .projects:hover div{
+    transform: translateX(65%);
   }
 }
 
