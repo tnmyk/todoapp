@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+body {
+  font-size: 1rem;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 9vh;
+  color: white;
+  background-color: black;
+  padding: 1vw;
+}
+.logo-container {
+  flex: 2;
+}
+.logo-container a {
+  font-family: "Allura", cursive;
+  font-size: 2em;
+  padding: 1vw;
+}
+nav {
+  flex: 1;
+}
+.logo-container img {
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+header ul li {
+  margin: 0 1em;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  display: flex;
+  /* background:linear-gradient(to right,black,white); */
+}
+.todo-flex {
+  /* background-color:gray; */
+  border-right: 1px dotted black;
+  width: 50%;
+  height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-list-container h1 {
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.todo-list-container{
+    color: white;
+    background-color:black;
+    height:96%;
+    width: 70%;
+    border-radius: 15px;
+    border:1px solid white;
+    /* background-image: url(/imgs/empty.svg); */
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#ordered-list{
+    height:80%;
+    padding:1em 1em 1em 2em;
+    font-size:1.4em;
+    overflow-y:scroll;
+    word-break: break-all;
+}
+#ordered-list::-webkit-scrollbar{
+  width:9px;
+  height:90%;
+}
+#ordered-list::-webkit-scrollbar-track{
+  background-color: rgb(41, 41, 41);
+   
+}
+#ordered-list::-webkit-scrollbar-thumb{
+  background-color: rgb(128, 128, 128);
+  border-radius:10px;
+}
+#ordered-list li {
+    margin-bottom:1em;
+}
+.task-text{
+    display: inline-block;
+    vertical-align:top;
+    width: 72%;
+    padding-left: 1.1 em; 
+}
+.del-complete{
+    display:flex;
+    float: right;
+    background-color: black;
+    align-items: center;
+    justify-content:flex-end;
+    width: 25%;
+    
+    /* background-color:red; */
+}
+.done{
+    background-color:rgb(31, 223, 31);
+    width:6vh;
+    height:6vh;
+    
+    border: none;
+    cursor:pointer;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background-image: url(./imgs/done.svg);
+    background-size:65%;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.delete{
+    background-color:rgb(255, 28, 28);
+    /* background-color:rgb(216, 216, 0); */
+    width:6vh;
+    height:6vh;
+   
+    border: none;
+    margin-left: 0.4vw;
+    cursor: pointer;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background-image: url(./imgs/delete.svg);
+    background-size:65%;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+#clearall{
+  color: white;
+  float: right;
+  margin: 1.2em 1.4em;
+  padding: 0.2em 0.6em;
+  background-color: red;
+  border:none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* Adder (right) */
+.checkbox-container{
+  background-color:black;
+  position: absolute;
+  top: 13vh;
+  right: 1%;
+  font-size: 0.9em;
+  color: white;
+  padding:0.35em 0.7em;
+  border-radius:10px;
+  cursor: pointer;
+}
+#mute{
+  vertical-align:middle;
+
+}
+.adder-flex {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.adder-flex h1 {
+  margin-top: 15vh;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+.quote {
+  font-size: 0.9em;
+  margin-top: 5vh;
+  text-align: center;
+  width: 60%;
+}
+.quoter {
+  font-size: 0.9em;
+  margin-top: 1vh;
+  width: 50%;
+  text-align: right;
+}
+#input-task {
+  margin-top: 10vh;
+  font-size: 1.4em;
+  width: 50%;
+  font-weight: 500;
+  border: 1.35px solid black;
+  padding: 0.1em 0.25em;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+#input-task:focus {
+  box-shadow: 0 0 3px 3px violet;
+}
+#input-submit {
+  margin-top: 6vh;
+  padding: 0.3em 1em;
+  font-size: 1.1em;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+#input-submit:hover {
+  background-color: rgb(224, 224, 224);
+}
