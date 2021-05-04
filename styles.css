@@ -26,8 +26,9 @@ header {
   flex: 2;
 }
 .logo-container a {
-  font-family: "Allura", cursive;
-  font-size: 2em;
+  /* font-family: "Allura", cursive;
+   */
+  font-size: 1.15em;
   padding: 1vw;
 }
 nav {
@@ -44,12 +45,20 @@ header ul {
 }
 header ul li {
   margin: 0 1em;
+  
 }
 header a {
   text-decoration: none;
   color: white;
-}
+  font-weight: 550;
+  transition: 0.5s;
+  border-bottom: 2px solid transparent;
 
+}
+header li a:hover{
+  border-bottom: 1px solid rgb(211, 211, 211);
+  color: rgb(238, 238, 238);
+}
 main {
   display: flex;
   /* background:linear-gradient(to right,black,white); */
@@ -67,6 +76,7 @@ main {
     text-align: center;
     border-bottom: 1px solid white;
     letter-spacing: 2px;
+    text-shadow: 3px 3px #6C63FF;
 }
 .todo-list-container{
     color: white;
@@ -194,6 +204,7 @@ main {
   margin-top: 15vh;
   font-weight: 700;
   border-bottom: 1px solid black;
+ 
 }
 .quote {
   font-size: 0.9em;
@@ -230,11 +241,11 @@ main {
   cursor: pointer;
   font-weight: 600;
   transition: 0.5s;
-  background-color:#6C63FF;
+  background-color:#b3afff;
 }
 
 #input-submit:hover {
-  background-color: rgb(224, 224, 224);
+  background-color: #7b74ff;
 }
 .madeby{
   font-size:4em;
@@ -363,6 +374,8 @@ background-color:black;
   }
   #input-submit{
     margin-top:3vh; 
+    margin-bottom:6vh; 
+
   }
   .madeby{
     font-size:9vw;
