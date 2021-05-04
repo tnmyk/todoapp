@@ -105,7 +105,7 @@ main {
 .task-text{
     display: inline-block;
     vertical-align:top;
-    width: 72%;
+    width: 68%;
     padding-left: 1.1 em; 
 }
 .del-complete{
@@ -114,18 +114,18 @@ main {
     background-color: black;
     align-items: center;
     justify-content:flex-end;
-    width: 25%;
+    min-width: 30%;
     
     /* background-color:red; */
 }
 .done{
     background-color:rgb(31, 223, 31);
-    width:6vh;
-    height:6vh;
+    width:36px;
+    height:36px;
     
     border: none;
     cursor:pointer;
-    border-radius:18px;
+    border-radius:20px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -138,13 +138,13 @@ main {
 .delete{
     background-color:rgb(255, 28, 28);
     /* background-color:rgb(216, 216, 0); */
-    width:6vh;
-    height:6vh;
-   
+    width:36px;
+    height:36px;
     border: none;
     margin-left: 0.4vw;
     cursor: pointer;
-    border-radius:18px;
+    /* border-radius:18px; */
+    border-radius:20px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -178,7 +178,6 @@ main {
 }
 #mute{
   vertical-align:middle;
-
 }
 .adder-flex {
   width: 50%;
@@ -229,4 +228,51 @@ main {
 
 #input-submit:hover {
   background-color: rgb(224, 224, 224);
+}
+
+@media all and (max-width:1200px){
+  .todo-list-container{
+    height: 65vh;
+  }
+}
+
+@media all and (max-width:1100px){
+  .todo-list-container{
+    width: 90%;
+  }
+}
+@media all and (max-width:730px){
+  main{
+    flex-direction:column;
+    min-height: 100vh;
+  }
+  .todo-flex{
+    width:100%;
+    align-items: flex-start;
+    margin-top: 9vh;
+    height: 50vh;
+  }
+  .todo-list-container{
+    width:80%;
+    height:50vh;
+  }
+  .checkbox-container{
+    top: 10vh;
+  }
+  .adder-flex{
+    width:100%;
+    align-items: center;
+  }
+  .adder-flex h1{
+    margin-top:10vh;
+  }
+  .quote{
+    margin-top:3vh ;
+  }
+  #input-task{
+    margin-top:3vh;
+  }
+  #input-submit{
+    margin-top:3vh; 
+  }
 }
