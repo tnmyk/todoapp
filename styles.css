@@ -206,7 +206,7 @@ main {
   margin-top: 10vh;
   font-size: 1.4em;
   width: 50%;
-  font-weight: 500;
+  font-weight: 600;
   border: 1.35px solid black;
   padding: 0.1em 0.25em;
   border-radius: 5px;
@@ -228,6 +228,82 @@ main {
 
 #input-submit:hover {
   background-color: rgb(224, 224, 224);
+}
+.madeby{
+  font-size:4em;
+  margin: 0.7em 1em;
+  transition: 0.7s;
+  font-weight: 600;
+  background: linear-gradient(to right,rgb(0, 0, 0),rgb(175, 175, 175));-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.madeby::after{
+  display:block;
+  content:'';
+  height: 1vh;
+  width:70%;
+  border-bottom: 1px solid gray;
+}
+.myportfolio div{
+  transition:1s;
+  display:inline-block;
+  text-decoration: underline;
+  margin-left: 1em;
+  background: linear-gradient(to right,rgb(0, 0, 0),rgb(175, 175, 175));-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.myportfolio:hover div{
+ transform: translateX(85%);
+}
+.myportfolio h3{
+display: inline-block;
+transition: 1s;
+transform-origin: left;
+transform:scaleX(0.4);
+background-color:black;
+}
+.myportfolio:hover h3{
+  transform:scaleX(9);
+}
+.myportfolio{
+  font-size:3.2em;
+  margin: 1em;
+  color: black;
+  font-weight: 600;
+  /* background-color: aqua; */
+  width:70%;
+  cursor:pointer;
+}
+.projects{
+  font-size:2.2em;
+  margin: 1em 1.5em;
+  color: black;
+  font-weight: 600;
+  /* background-color: aqua; */
+  width:70%;
+  cursor:pointer;
+}
+.projects:hover h3{
+  transform:scaleX(11);
+}
+.projects div{
+  background: linear-gradient(to right,rgb(0, 0, 0),rgb(175, 175, 175));-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  vertical-align:middle;
+  transition:1s;
+  display:inline-block;
+  text-decoration: underline;
+  margin-left: 2em;
+}
+.projects:hover div{
+ transform: translateX(85%);
+}
+.projects h3{
+display: inline-block;
+transition: 1s;
+transform-origin: left;
+transform:scaleX(0.5);
+background-color:black;
 }
 
 @media all and (max-width:1200px){
@@ -276,3 +352,5 @@ main {
     margin-top:3vh; 
   }
 }
+
+
