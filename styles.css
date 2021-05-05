@@ -197,9 +197,9 @@ main {
   border-radius:10px;
   cursor: pointer;
 }
-#mute{
+/* #mute{
   vertical-align:middle;
-}
+} */
 .adder-flex {
   width: 50%;
   display: flex;
@@ -353,7 +353,7 @@ background-color:black;
   .todo-flex{
     width:100%;
     align-items: flex-start;
-    margin-top: 9vh;
+    margin-top: 2.5vh;
     height: 50vh;
   }
   .todo-list-container{
@@ -364,14 +364,21 @@ background-color:black;
     height:37vh;
   }
   .checkbox-container{
-    top: 10vh;
+    /* top: 10vh; */
+    position: absolute;
+    top: 105vh;
+    right: 2vw; 
+    font-size: 0.8em;
+    margin-bottom: 2vh;
+    /* height:2vh; */
+    /* display:none; */
   }
   .adder-flex{
     width:100%;
     align-items: center;
   }
   .adder-flex h1{
-    margin-top:10vh;
+    margin-top:4.5vh;
   }
   .quote{
     margin-top:3vh ;
@@ -410,6 +417,7 @@ background-color:black;
   .projects:hover div{
     transform: translateX(65%);
   }
+  
 }
 
 
