@@ -78,6 +78,12 @@ main {
     letter-spacing: 2px;
     text-shadow: 3px 3px #6C63FF;
 }
+#counter{
+  font-size:0.6em;
+  vertical-align:middle;
+  margin-left: 1em;
+}
+
 .todo-list-container{
     color: white;
     background-color:black;
@@ -204,7 +210,8 @@ main {
   margin-top: 15vh;
   font-weight: 700;
   border-bottom: 1px solid black;
- 
+  background: linear-gradient(to right,rgb(0, 0, 0),rgb(109, 109, 109));-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .quote {
   font-size: 0.9em;
