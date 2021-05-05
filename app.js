@@ -137,9 +137,15 @@ counter.innerText = `(${list.children.length})`;
 
 var clear = document.querySelector('#clearall')
 clear.addEventListener('click',function() {
+  if (!mute && list.children.length > 0) {
+    audio.src = "./sounds/added-sound.mp3";
+    audio.currentTime = 0;
+    audio.play();
+  }
   list.innerHTML='';
   listContainer.style.backgroundImage = "url(./imgs/empty.svg)";
   localStorage.setItem("storedtodolist", list.innerHTML);
-counter.innerText = `(${list.children.length})`;
-
+  counter.innerText = `(${list.children.length})`;
+  // console.log(list.children.length)
+  
 })

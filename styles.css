@@ -52,11 +52,11 @@ header a {
   color: white;
   font-weight: 550;
   transition: 0.5s;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1.5px solid transparent;
 
 }
 header li a:hover{
-  border-bottom: 1px solid rgb(211, 211, 211);
+  border-bottom: 1.5px solid rgb(211, 211, 211);
   color: rgb(238, 238, 238);
 }
 main {
@@ -67,7 +67,7 @@ main {
   /* background-color:gray; */
   border-right: 1px dotted black;
   width: 50%;
-  height: 88vh;
+  height: 91vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +99,7 @@ main {
 }
 
 #ordered-list{
-    height:60vh;
+    height:62vh;
     padding:1em 1em 1em 2em;
     font-size:1.4em;
     font-weight:550;
