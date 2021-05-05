@@ -34,6 +34,7 @@ muteUnmute.addEventListener("click", function () {
   localStorage.setItem("muteSetting", mute);
 });
 var input = document.querySelector("#input-task");
+input.focus();
 var counter = document.querySelector('#counter');
 counter.innerText = `(${list.children.length})`
 addTask.addEventListener("click", function () {
