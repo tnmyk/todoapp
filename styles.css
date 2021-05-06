@@ -509,5 +509,19 @@ background-color:black;
   }
   
 }
-
+@media all and (max-height:795px){
+  .todo-list-container{
+    height:55vh;
+  }
+  .stopwatch{
+    margin-top:11vh;
+    height:22vh;
+  }
+  .checkbox-container{
+    top:115vh;
+  }
+  #totaltime-div{
+    top: 116vh;
+  }
+}
 
