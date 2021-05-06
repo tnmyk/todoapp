@@ -1,9 +1,33 @@
 // add total time focused
 var audio = document.querySelector("#sound");
-
+var totaltime = document.querySelector("#totaltime");
 var saved = localStorage.getItem("storedtodolist");
 var muteUnmute = document.querySelector(".checkbox-container");
 var mute = localStorage.getItem("muteSetting");
+var totaltimearr =JSON.parse(localStorage.getItem("totaltime"));
+
+console.log(totaltimearr)
+var tseconds = 0;
+var tminutes = 0;
+var thours = 0;
+if(totaltimearr){
+   tseconds = totaltimearr.s;
+   tminutes = totaltimearr.m;
+   thours = totaltimearr.h;
+   var tsecondstext = tseconds;
+   var tminutestext = tminutes;
+   var thourstext = thours;
+   if (tseconds < 10) {
+     tsecondstext = "0" + tseconds;
+   }
+   if (tminutes < 10) {
+     tminutestext = "0" + tminutes;
+   }
+   if (thours < 10) {
+     thourstext = "0" + thours;
+   }
+   totaltime.textContent = thourstext + ":" + tminutestext + ":" + tsecondstext;
+}
 
 if (mute == "true") {
   muteUnmute.textContent = "Muted 🔇";
@@ -50,7 +74,33 @@ function changeTime(){
     hourstext="0"+hours
   }
   time.textContent=hourstext+":"+minutestext+":"+secondstext;
-  console.log(secondstext)
+}
+
+function changeTotalTime() {
+  tseconds++;
+  if (tseconds > 60) {
+    tminutes++;
+    tseconds = 0;
+  }
+  if (tminutes > 60) {
+    thours++;
+    tminutes = 0;
+  }
+  var tsecondstext = tseconds;
+  var tminutestext = tminutes;
+  var thourstext = thours;
+  if (tseconds < 10) {
+    tsecondstext = "0" + tseconds;
+  }
+  if (tminutes < 10) {
+    tminutestext = "0" + tminutes;
+  }
+  if (thours < 10) {
+    thourstext = "0" + thours;
+  }
+  totaltime.textContent = thourstext + ":" + tminutestext + ":" + tsecondstext;
+  var tt = { h:thours,m:tminutes,s:tseconds};
+  localStorage.setItem("totaltime", JSON.stringify(tt));
 }
 
 var start = document.querySelector("#start");
@@ -61,6 +111,7 @@ start.addEventListener("click", function () {
   if(!counting){
     counting=true;
     stopwatch=setInterval(changeTime,1000);
+    totalstopwatch = setInterval(changeTotalTime,1000);
     start.style.backgroundColor="yellow"
     start.textContent="Pause"
     if (!mute) {
@@ -72,6 +123,7 @@ start.addEventListener("click", function () {
   else{
     counting=false;
     clearInterval(stopwatch);
+    clearInterval(totalstopwatch);
     start.style.backgroundColor = "lightgreen";
     start.textContent = "Resume";  
     if (!mute) {
@@ -88,6 +140,7 @@ reset.addEventListener("click", function (){
       audio.play();
     }   
     clearInterval(stopwatch);
+    clearInterval(totalstopwatch)
     seconds=0;
     minutes=0;
     hours = 0;
