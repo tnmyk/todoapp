@@ -514,7 +514,7 @@ background-color:black;
   }
   
 }
-@media all and (max-height:795px){
+@media all and (max-height:795px and max-width:730px){
   .todo-list-container{
     height:55vh;
   }

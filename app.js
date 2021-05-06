@@ -6,7 +6,7 @@ var muteUnmute = document.querySelector(".checkbox-container");
 var mute = localStorage.getItem("muteSetting");
 var totaltimearr =JSON.parse(localStorage.getItem("totaltime"));
 
-console.log(totaltimearr)
+
 var tseconds = 0;
 var tminutes = 0;
 var thours = 0;
@@ -230,7 +230,6 @@ document.addEventListener("keypress", function (e) {
 });
 
 audio.volume =0.5;
-console.log(audio.volume);
 
 audio.preload = "auto";
 list.addEventListener("click", function (e) {
