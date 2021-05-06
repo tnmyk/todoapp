@@ -30,8 +30,6 @@ header {
   flex: 2;
 }
 .logo-container a {
-  /* font-family: "Allura", cursive;
-   */
   font-size: 1.15em;
   padding: 1vw;
 }
@@ -42,14 +40,14 @@ nav {
   vertical-align:text-bottom;
   margin-right: 0.2em;
 }
-.logo-container:hover a{
-  color: #a19dff;
+.logo-container:hover{
+   /* transform:scale(1.5); */
 }
 .logo-container img{
   transition: 0.5s;
 }
 .logo-container:hover img{
-  filter: invert(53%) sepia(18%) saturate(1261%) hue-rotate(203deg) brightness(104%) contrast(101%);
+  transform: scale(1.25);
 }
 header ul {
   display: flex;
@@ -58,7 +56,7 @@ header ul {
 }
 header ul li {
   margin: 0 1em;
-  
+  transition:0.5s;
 }
 header a {
   text-decoration: none;
@@ -68,9 +66,9 @@ header a {
   border-bottom: 1.5px solid transparent;
 
 }
-header li a:hover{
-  border-bottom: 1.5px solid #a19dff;
-  color: #a19dff;
+header li:hover{
+  border-bottom: 1.5px solid white;
+  transform: scale(1.05);
 }
 main {
   display: flex;
