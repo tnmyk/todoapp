@@ -443,6 +443,7 @@ background-color:black;
   .todo-list-container{
     width:80%;
     height:50vh;
+    max-height: 440px;
   }
   #ordered-list{
     height:37vh;
