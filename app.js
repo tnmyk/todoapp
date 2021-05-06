@@ -2,18 +2,15 @@ var saved = localStorage.getItem("storedtodolist");
 var muteUnmute = document.querySelector(".checkbox-container");
 var mute = localStorage.getItem("muteSetting");
 
-if (mute=='true') {
+if (mute == "true") {
   muteUnmute.textContent = "Muted 🔇";
-  mute=true;
-} else if(mute=='false'){
+  mute = true;
+} else if (mute == "false") {
   muteUnmute.textContent = "Sound on 🎶";
-  mute=false;
+  mute = false;
 }
-
-
-
 var list = document.querySelector("#ordered-list");
-var listContainer = document.querySelector('.todo-list-container');
+var listContainer = document.querySelector(".todo-list-container");
 
 if (saved) {
   list.innerHTML = saved;
@@ -23,6 +20,87 @@ var addTask = document.querySelector("#input-submit");
 if (list.innerText == "") {
   listContainer.style.backgroundImage = "url(./imgs/empty.svg)";
 }
+var time = document.querySelector('#time');
+var seconds=0;
+var minutes=0;
+var hours=0;
+function changeTime(){
+  seconds++;
+  if(seconds>60){
+    minutes++;
+    seconds=0;
+  }
+  if(minutes>60){
+    hours++;
+    minutes=0;
+  }
+  var secondstext = seconds
+  var minutestext = minutes
+  var hourstext = hours
+  if(seconds<10){
+    secondstext="0"+seconds
+  }
+  if(minutes<10){
+    minutestext="0"+minutes
+  }
+  if(hours<10){
+    hourstext="0"+hours
+  }
+  time.textContent=hourstext+":"+minutestext+":"+secondstext;
+  console.log(secondstext)
+}
+
+var start = document.querySelector("#start");
+var reset = document.querySelector("#reset");
+var counting = false;
+var stopwatch ;
+start.addEventListener("click", function () {
+  if(!counting){
+    counting=true;
+    stopwatch=setInterval(changeTime,1000);
+    start.style.backgroundColor="yellow"
+    start.textContent="Pause"
+    if (!mute) {
+      audio.src = "./sounds/timerstart.mp3";
+      audio.currentTime = 0;
+      audio.play();
+    }
+  }
+  else{
+    counting=false;
+    clearInterval(stopwatch);
+    start.style.backgroundColor = "lightgreen";
+    start.textContent = "Resume";  
+    if (!mute) {
+      audio.src = "./sounds/timerstop.mp3";
+      audio.currentTime = 0;
+      audio.play();
+    } 
+  }
+});
+reset.addEventListener("click", function (){
+    if (!mute && seconds != 0) {
+      audio.src = "./sounds/timerreset.mp3";
+      audio.currentTime = 0;
+      audio.play();
+    }   
+    clearInterval(stopwatch);
+    seconds=0;
+    minutes=0;
+    hours = 0;
+    time.textContent="00:00:00";
+    if(counting){
+      counting = false;
+      start.style.backgroundColor = "lightgreen";
+      start.textContent = "Start";  
+    }
+    else{
+      start.style.backgroundColor = "lightgreen";
+      start.textContent = "Start";
+    } 
+    
+})
+
 muteUnmute.addEventListener("click", function () {
   if (!mute) {
     muteUnmute.textContent = "Muted 🔇";
@@ -35,8 +113,8 @@ muteUnmute.addEventListener("click", function () {
 });
 var input = document.querySelector("#input-task");
 input.focus();
-var counter = document.querySelector('#counter');
-counter.innerText = `(${list.children.length})`
+var counter = document.querySelector("#counter");
+counter.innerText = `(${list.children.length})`;
 addTask.addEventListener("click", function () {
   if (input.value.length > 0) {
     if (!mute) {
@@ -59,11 +137,9 @@ addTask.addEventListener("click", function () {
     if (list.innerText != "") {
       listContainer.style.backgroundImage = "none";
     }
-  counter.innerText = `(${list.children.length})`;
-
+    counter.innerText = `(${list.children.length})`;
   }
 });
-
 
 document.addEventListener("keypress", function (e) {
   if (e.key == "Enter" && input.value.length > 0) {
@@ -88,14 +164,16 @@ document.addEventListener("keypress", function (e) {
     if (list.innerText != "") {
       listContainer.style.backgroundImage = "none";
     }
-  counter.innerText = `(${list.children.length})`;
+    counter.innerText = `(${list.children.length})`;
 
     // console.log(list.children.length)
   }
 });
 
-
 var audio = document.querySelector("#sound");
+audio.volume =0.5;
+console.log(audio.volume);
+
 audio.preload = "auto";
 list.addEventListener("click", function (e) {
   const li = e.target.parentElement.parentElement;
@@ -108,8 +186,13 @@ list.addEventListener("click", function (e) {
     }
     if (list.innerText == "") {
       listContainer.style.backgroundImage = "url(./imgs/empty.svg)";
+        if (!mute) {
+          audio.src = "./sounds/listempty.mp3";
+          audio.currentTime = 0;
+          audio.play();
+        }
     }
-counter.innerText = `(${list.children.length})`;
+    counter.innerText = `(${list.children.length})`;
 
     localStorage.setItem("storedtodolist", list.innerHTML);
   } else if (e.target.className == "done") {
@@ -136,17 +219,16 @@ counter.innerText = `(${list.children.length})`;
   }
 });
 
-var clear = document.querySelector('#clearall')
-clear.addEventListener('click',function() {
+var clear = document.querySelector("#clearall");
+clear.addEventListener("click", function () {
   if (!mute && list.children.length > 0) {
-    audio.src = "./sounds/added-sound.mp3";
+    audio.src = "./sounds/listempty.mp3";
     audio.currentTime = 0;
     audio.play();
   }
-  list.innerHTML='';
+  list.innerHTML = "";
   listContainer.style.backgroundImage = "url(./imgs/empty.svg)";
   localStorage.setItem("storedtodolist", list.innerHTML);
   counter.innerText = `(${list.children.length})`;
   // console.log(list.children.length)
-  
-})
+});

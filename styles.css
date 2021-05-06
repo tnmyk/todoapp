@@ -198,7 +198,7 @@ main {
 .checkbox-container{
   background-color:black;
   position: absolute;
-  top: 13vh;
+  top: 11vh;
   right: 1%;
   font-size: 0.9em;
   color: white;
@@ -215,12 +215,60 @@ main {
   flex-direction: column;
   align-items: center;
 }
-.adder-flex h1 {
-  margin-top: 15vh;
+.stopwatch {
+  width:60%;
+  height:27vh;
+  margin-top: 10vh;
   font-weight: 700;
   border-bottom: 1px solid black;
-  background: linear-gradient(to right,rgb(0, 0, 0),rgb(109, 109, 109));-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* background-color: #6C63FF; */
+  background-color: black;
+  border-radius:20px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  border:1px solid white;
+  box-shadow: 7px 7px 0px 0px #6C63FF;
+}
+#time{
+  font-size:1.7em;
+  background-color:white;
+  padding: 1.7vh auto;
+  width: 85%;
+  height:35%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:10px;
+}
+.stopwatch-btns{
+  width:60%;
+  /* background-color: aqua; */
+  display:flex;
+  justify-content:space-between;
+  margin-top: 4%;
+  
+}
+#start{
+  border: none;
+  border-radius:5px;
+  background-color:lightgreen;
+  width:6em;
+  height:2.3em;
+  font-weight: 600;
+  cursor: pointer;
+}
+#reset{
+  cursor: pointer;
+
+  border: none;
+  border-radius:5px;
+  background-color:rgb(255, 35, 35);
+  width:6em;
+  height:2.3em;
+  font-weight: 600;
+
 }
 .quote {
   font-size: 0.9em;
@@ -249,6 +297,7 @@ main {
 }
 #input-task:focus {
   box-shadow: 0 0 3px 3px violet;
+  background-color: white;
 }
 #input-submit {
   margin-top: 6vh;
