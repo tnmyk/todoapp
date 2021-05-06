@@ -460,12 +460,21 @@ background-color:black;
   .adder-flex h1{
     margin-top:4.5vh;
   }
-  .quote{
-    margin-top:3vh ;
+  .stopwatch{
+    margin-top: 3vh;
+    width:75%;
+    height:18vh;
   }
+  /* .quote{
+    margin-top:3vh ;
+  } */
   #input-task{
-    margin-top:3vh;
+    margin-top:5vh;
     width: 60%;
+  }
+  #totaltime-div{
+    top: 104.8vh;
+    left: 3vw;
   }
   #input-submit{
     margin-top:3vh; 
