@@ -1,3 +1,6 @@
+// add total time focused
+var audio = document.querySelector("#sound");
+
 var saved = localStorage.getItem("storedtodolist");
 var muteUnmute = document.querySelector(".checkbox-container");
 var mute = localStorage.getItem("muteSetting");
@@ -108,6 +111,9 @@ muteUnmute.addEventListener("click", function () {
   } else {
     muteUnmute.textContent = "Sound on 🎶";
     mute = false;
+    audio.src = "./sounds/timerstop.mp3";
+    audio.currentTime = 0;
+    audio.play();
   }
   localStorage.setItem("muteSetting", mute);
 });
@@ -170,7 +176,6 @@ document.addEventListener("keypress", function (e) {
   }
 });
 
-var audio = document.querySelector("#sound");
 audio.volume =0.5;
 console.log(audio.volume);
 

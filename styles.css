@@ -221,19 +221,17 @@ main {
   margin-top: 10vh;
   font-weight: 700;
   border-bottom: 1px solid black;
-  /* background-color: #6C63FF; */
   background-color: black;
   border-radius:20px;
   display:flex;
   align-items: center;
   justify-content:center;
   flex-direction: column;
-  border:1px solid white;
-  box-shadow: 7px 7px 0px 0px #6C63FF;
+  box-shadow: 7px 4px 4px 1px #564fce;
 }
 #time{
   font-size:1.7em;
-  background-color:white;
+  background-color:rgb(218, 218, 218);
   padding: 1.7vh auto;
   width: 85%;
   height:35%;
@@ -241,6 +239,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius:10px;
+  letter-spacing:2px;
 }
 .stopwatch-btns{
   width:60%;
@@ -258,17 +257,21 @@ main {
   height:2.3em;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.5s;
+}
+#start:hover,#reset:hover{
+  transform: scale(1.05);
 }
 #reset{
   cursor: pointer;
-
   border: none;
   border-radius:5px;
   background-color:rgb(255, 35, 35);
   width:6em;
   height:2.3em;
   font-weight: 600;
-
+  transition: 0.5s;
+  
 }
 .quote {
   font-size: 0.9em;
@@ -314,6 +317,18 @@ main {
 
 #input-submit:hover {
   background-color: #7b74ff;
+}
+#totaltime-div{
+  font-size:1.15em;
+  position:absolute;
+  bottom: 3vh;
+  right: 33%;
+  font-weight: 500;
+}
+#totaltime{
+  
+  font-size:0.85em;
+  font-weight: 300;
 }
 #about-body{
   background: linear-gradient(160deg,#a19dff,#e6e5ff 40%);
